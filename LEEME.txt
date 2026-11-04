@@ -1,43 +1,19 @@
 EXC. — EXCLUSIVE STYLE
-Primera versión visual mejorada | Noviembre 2026
+V5 | Rediseño editorial de la página principal
 
-CONTENIDO
-- Tienda responsive para móvil, tablet y computador.
-- Identidad visual negra con fondo de mármol.
-- Categorías: New In, Sneakers, Ropa, Relojes y Accesorios.
-- Filtros del catálogo.
-- Carrito persistente en el navegador.
-- Formulario de pedido que prepara el mensaje para WhatsApp.
-- Preferencia de pago incluida en el mensaje del pedido.
-- Enlaces de Instagram y Facebook configurables.
+Esta versión sí cambia la composición visual: portada editorial a pantalla amplia con la campaña EXC., cabecera centrada, categorías en mosaico, catálogo en tarjetas, secciones de marca y estilos específicos para móvil.
 
 ANTES DE PUBLICAR
 1. Abre products.js.
-2. Cambia STORE.whatsapp por el número real con indicativo de país, solo números.
-   Ejemplo Colombia: 573001234567
+2. Cambia STORE.whatsapp por el número real con indicativo de país, solo números. Ejemplo Colombia: 573001234567.
 3. Pega las URLs reales en STORE.instagram y STORE.facebook.
-4. Reemplaza los productos de ejemplo, precios, tallas y fotografías en PRODUCTS.
-   Los productos y precios actuales son demostrativos, no son inventario ni precios confirmados.
-5. Prueba el carrito y el pedido en móvil y computador.
+4. Reemplaza nombres, precios, tallas y fotografías demostrativas en PRODUCTS.
+5. Prueba el sitio en móvil y computador.
 
-IMPORTANTE SOBRE PAGOS
-Esta versión NO cobra en línea ni confirma pagos automáticamente. La opción "Pago en línea"
-solo indica una preferencia y se envía por WhatsApp para coordinar. Para recibir pagos reales
-se debe integrar una pasarela (por ejemplo Wompi, PayU o Mercado Pago) y un backend seguro.
-El pago contra entrega también debe confirmarse con el vendedor y la transportadora.
-
-REDES Y WHATSAPP
-Los enlaces de Instagram/Facebook permanecen ocultos hasta que agregues sus URLs reales.
-El botón de WhatsApp no abrirá un chat de pedidos hasta que configures el número real.
+PAGOS
+El checkout actual prepara pedidos por WhatsApp. No procesa pagos en línea. Para cobrar realmente se necesita integrar una pasarela y un backend seguro. La opción de pago en línea es solo una preferencia que se envía al vendedor.
 
 PUBLICACIÓN
-Puedes subir el contenido de esta carpeta a un repositorio GitHub y activar GitHub Pages.
-GitHub Pages sirve el frontend estático; no sustituye un backend para pagos, inventario
-multiusuario, cuentas o administración segura.
+Sube el contenido de esta carpeta al repositorio y vuelve a desplegar GitHub Pages. Si ya estaba publicado, espera a que termine el despliegue y recarga sin caché. En iPhone puedes probar en una pestaña privada para descartar que el navegador muestre archivos antiguos.
 
-ESTRUCTURA
-- index.html: página principal y componentes.
-- style.css: estilos responsive y tema visual.
-- script.js: filtros, carrito y armado del pedido.
-- products.js: configuración de la tienda y catálogo.
-- assets/: logos de referencia, banners, mármol e insignias.
+Archivos principales: index.html, style.css, script.js, products.js y assets/.
