@@ -59,7 +59,7 @@
 
   function visual(p, cls) {
     return p.image
-      ? '<img src="' + esc(p.image) + '" alt="' + esc(p.name) + '" loading="lazy">'
+      ? '<img src="' + esc(p.image) + '" alt="' + esc(p.name) + '" loading="lazy" onerror="this.outerHTML=\'<span class=&quot;ph&quot; aria-hidden=&quot;true&quot;>EXC.</span>\'">'
       : '<span class="ph" aria-hidden="true">EXC.</span>';
   }
 
@@ -207,12 +207,12 @@
     var city = $('custCity').value.trim();
     var phone = $('custPhone').value.trim();
     var payment = $('custPayment').value;
-    var msg = 'Hola EXC., quiero hacer este pedido:\\n\\n' + lines.join('\\n') +
-      '\\n\\nTotal productos: ' + money(total) +
-      '\\nForma de pago preferida: ' + payment +
-      '\\nNombre: ' + (name || '(por confirmar)') +
-      '\\nTeléfono: ' + (phone || '(por confirmar)') +
-      '\\nCiudad y dirección: ' + (city || '(por confirmar)');
+    var msg = 'Hola EXC., quiero hacer este pedido:\n\n' + lines.join('\n') +
+      '\n\nTotal productos: ' + money(total) +
+      '\nForma de pago preferida: ' + payment +
+      '\nNombre: ' + (name || '(por confirmar)') +
+      '\nTeléfono: ' + (phone || '(por confirmar)') +
+      '\nCiudad y dirección: ' + (city || '(por confirmar)');
     if (!waReady) { toast('Configura tu WhatsApp real en products.js antes de recibir pedidos.'); return; }
     window.open(waUrl(msg), '_blank', 'noopener');
   });
