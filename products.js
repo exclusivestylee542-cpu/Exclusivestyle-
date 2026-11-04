@@ -20,7 +20,7 @@ const TALLAS_ROPA = ["S", "M", "L", "XL"];
    new: true  -> aparece en "Nuevos ingresos" y con etiqueta "Nuevo". */
 
 /* Productos de EJEMPLO: cambia nombre, precio y agrega tu foto.
-   image: ruta de la foto, por ejemplo "assets/products/sneaker-01.jpg".
+   image: ruta de la foto, por ejemplo "fotos-sneaker-01.jpg".
    Si image está vacío se muestra un espacio con la marca EXC. */
 const PRODUCTS = [
   { id: "sn-01", name: "Tenis Noir 01",   category: "sneakers", price: 289000, sizes: TALLAS_CALZADO, image: "", new: true },
