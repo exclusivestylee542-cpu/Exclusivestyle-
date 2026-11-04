@@ -11,7 +11,7 @@
       return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
     });
   };
-  var CATS = { sneakers: 'Sneakers', ropa: 'Ropa', relojes: 'Relojes', accesorios: 'Accesorios' };
+  var CATS = { sneakers: 'Tenis', ropa: 'Ropa', relojes: 'Relojes', accesorios: 'Accesorios' };
   var toastTimer;
   function toast(msg) {
     var t = $('toast');

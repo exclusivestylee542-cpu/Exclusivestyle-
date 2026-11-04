@@ -1,19 +1,20 @@
 EXC. — EXCLUSIVE STYLE
-V5 | Rediseño editorial de la página principal
+Versión con identidad de marca y textos en español.
 
-Esta versión sí cambia la composición visual: portada editorial a pantalla amplia con la campaña EXC., cabecera centrada, categorías en mosaico, catálogo en tarjetas, secciones de marca y estilos específicos para móvil.
+CAMBIOS DE ESTA VERSIÓN
+- Encabezado superior con el logotipo corto EXC.
+- Presentación EXCLUSIVE STYLE antes de la portada principal.
+- Textos comerciales y navegación en español.
+- Categorías visibles: Nuevos ingresos, Tenis, Ropa, Relojes y Accesorios.
+- Conserva el catálogo, filtros, carrito y formulario de pedido por WhatsApp.
+- Diseño adaptable a celulares y computadores.
 
-ANTES DE PUBLICAR
-1. Abre products.js.
-2. Cambia STORE.whatsapp por el número real con indicativo de país, solo números. Ejemplo Colombia: 573001234567.
-3. Pega las URLs reales en STORE.instagram y STORE.facebook.
-4. Reemplaza nombres, precios, tallas y fotografías demostrativas en PRODUCTS.
-5. Prueba el sitio en móvil y computador.
+CONFIGURACIÓN PENDIENTE ANTES DE RECIBIR PEDIDOS
+En products.js configura:
+- STORE.whatsapp: número real con indicativo de país, solo dígitos.
+- STORE.instagram: URL real del perfil de Instagram.
+- STORE.facebook: URL real de la página de Facebook.
+- PRODUCTS: reemplaza productos, precios, tallas y fotos de ejemplo por los datos reales.
 
 PAGOS
-El checkout actual prepara pedidos por WhatsApp. No procesa pagos en línea. Para cobrar realmente se necesita integrar una pasarela y un backend seguro. La opción de pago en línea es solo una preferencia que se envía al vendedor.
-
-PUBLICACIÓN
-Sube el contenido de esta carpeta al repositorio y vuelve a desplegar GitHub Pages. Si ya estaba publicado, espera a que termine el despliegue y recarga sin caché. En iPhone puedes probar en una pestaña privada para descartar que el navegador muestre archivos antiguos.
-
-Archivos principales: index.html, style.css, script.js, products.js y assets/.
+La selección de pago en el carrito comunica la preferencia del cliente por WhatsApp; no procesa cobros en línea. Para pagos en línea reales se requiere integrar una pasarela autorizada y un backend seguro.

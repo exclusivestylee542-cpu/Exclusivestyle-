@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#0b0b0c">
-  <meta name="description" content="EXC. Exclusive Style — Sneakers y ropa. Style Beyond Borders. Pide directo por WhatsApp.">
+  <meta name="description" content="EXC. Exclusive Style: tienda de tenis, ropa, relojes y accesorios. Estilo exclusivo y atención personalizada.">
   <title>EXC. | Exclusive Style</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -36,15 +36,22 @@
 </nav>
 
 <main>
-  <!-- HERO -->
+  <!-- PRESENTACIÓN DE MARCA -->
+  <section class="brand-intro" aria-label="Presentación de Exclusive Style">
+    <p class="brand-kicker">PRESENTAMOS</p>
+    <h1>EXCLUSIVE STYLE</h1>
+    <p>ESTILO MÁS ALLÁ DE LAS FRONTERAS.</p>
+  </section>
+
+  <!-- PORTADA -->
   <section class="hero" id="inicio">
     <div class="hero-media">
       <img src="assets/campana-exc.jpg" alt="Sneakers en blanco y negro, colección EXC.">
     </div>
     <div class="hero-copy">
-      <p class="tagline">Style beyond borders.</p>
-      <h1>STYLE BEYOND<br>BORDERS.</h1>
-      <p class="lead">Sneakers · Apparel · Watches<br>Una selección exclusiva para cada paso.</p>
+      <p class="tagline">Estilo más allá de las fronteras.</p>
+      <h1>ESTILO QUE<br>TRASCIENDE.</h1>
+      <p class="lead">Tenis · Ropa · Relojes<br>Una selección exclusiva para cada estilo.</p>
       <div class="hero-actions">
         <a href="#catalogo" class="btn btn-solid">Ver colección</a>
         <a href="#categorias" class="btn btn-ghost">Descubrir EXC.</a>
@@ -54,15 +61,15 @@
 
   <!-- CATEGORÍAS -->
   <section class="categories section-pad" id="categorias">
-    <div class="section-head"><h2>Discover the edit.</h2></div>
+    <div class="section-head"><h2>Descubre nuestras categorías.</h2></div>
     <div class="badge-grid">
       <a class="badge-card" href="#catalogo" data-filter-link="nuevo">
-        <img src="assets/badge-new-in.jpg" alt="New in: lo más reciente" loading="lazy">
-        <span>New in</span>
+        <img src="assets/badge-new-in.jpg" alt="Nuevos ingresos: lo más reciente" loading="lazy">
+        <span>Nuevos ingresos</span>
       </a>
       <a class="badge-card" href="#catalogo" data-filter-link="sneakers">
-        <img src="assets/badge-sneakers.jpg" alt="Sneakers" loading="lazy">
-        <span>Sneakers</span>
+        <img src="assets/badge-sneakers.jpg" alt="Tenis" loading="lazy">
+        <span>Tenis</span>
       </a>
       <a class="badge-card" href="#catalogo" data-filter-link="ropa">
         <img src="assets/badge-ropa.jpg" alt="Ropa" loading="lazy">
@@ -82,11 +89,11 @@
   <!-- COLECCIÓN -->
   <section class="collection section-pad" id="catalogo">
     <div class="section-head">
-      <h2>Selected pieces.</h2>
+      <h2>Nuestra colección.</h2>
       <div class="filters" role="group" aria-label="Filtrar productos">
         <button class="chip is-active" data-filter="todo">Todo</button>
-        <button class="chip" data-filter="nuevo">New in</button>
-        <button class="chip" data-filter="sneakers">Sneakers</button>
+        <button class="chip" data-filter="nuevo">Nuevos ingresos</button>
+        <button class="chip" data-filter="sneakers">Tenis</button>
         <button class="chip" data-filter="ropa">Ropa</button>
         <button class="chip" data-filter="relojes">Relojes</button>
         <button class="chip" data-filter="accesorios">Accesorios</button>
@@ -97,7 +104,7 @@
 
   <!-- CÓMO PEDIR -->
   <section class="how section-pad" id="como-pedir">
-    <div class="section-head"><h2>Una compra sencilla.</h2></div>
+    <div class="section-head"><h2>Comprar es sencillo.</h2></div>
     <ol class="steps">
       <li><span class="step-n">1</span><div><h3>Elige tus piezas</h3><p>Escoge la talla y agrégalas al carrito.</p></div></li>
       <li><span class="step-n">2</span><div><h3>Envía el pedido por WhatsApp</h3><p>Con un toque se abre el chat con tu pedido ya escrito.</p></div></li>
@@ -107,9 +114,9 @@
 
   <!-- ENVÍOS -->
   <section class="shipping section-pad" id="envios">
-    <img class="ship-badge" src="assets/badge-worldwide.jpg" alt="Worldwide" loading="lazy">
+    <img class="ship-badge" src="assets/badge-worldwide.jpg" alt="Envíos" loading="lazy">
     <div class="ship-copy">
-      <h2>Style without borders.</h2>
+      <h2>Envíos a tu destino.</h2>
       <p>Cuéntanos a dónde quieres recibir tu pedido y coordinamos el envío contigo por WhatsApp.</p>
     </div>
   </section>
@@ -133,7 +140,7 @@
     <a id="instagramLink" href="#" target="_blank" rel="noopener" hidden>Instagram</a>
     <a id="facebookLink" href="#" target="_blank" rel="noopener" hidden>Facebook</a>
   </div>
-  <p class="footer-note">SNEAKERS · APPAREL · WATCHES</p>
+  <p class="footer-note">TENIS · ROPA · RELOJES · ACCESORIOS</p>
   <small>© <span id="year"></span> EXC. Todos los derechos reservados.</small>
 </footer>
 
