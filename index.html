@@ -1,37 +1,138 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#080808"><meta name="description" content="EXC. Exclusive Style — Style Beyond Borders.">
-  <title>EXC. | Exclusive Style</title><link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0b0b0c">
+  <meta name="description" content="EXC. Exclusive Style — Sneakers y ropa. Style Beyond Borders. Pide directo por WhatsApp.">
+  <title>EXC. | Exclusive Style</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
 <header class="topbar">
-  <button class="menu-btn" id="menuBtn" aria-label="Abrir menú">☰</button>
-  <a class="wordmark" href="#inicio">EXC<span>.</span></a>
-  <a class="bag" href="#catalogo" aria-label="Ver carrito">BOLSA <span id="cartCount">0</span></a>
+  <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+  </button>
+  <a class="wordmark" href="#inicio" aria-label="EXC. inicio">EXC<span>.</span></a>
+  <nav class="desktop-nav" aria-label="Principal">
+    <a href="#categorias">Categorías</a>
+    <a href="#catalogo">Colección</a>
+    <a href="#como-pedir">Cómo pedir</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+  <button class="bag" id="openCart" aria-label="Abrir carrito">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8h14l-1 12H6L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+    <span class="bag-count" id="cartCount" aria-live="polite">0</span>
+  </button>
 </header>
-<nav class="mobile-menu" id="mobileMenu"><a href="#inicio">Inicio</a><a href="#categorias">Categorías</a><a href="#catalogo">Colección</a><a href="#marca">La marca</a></nav>
+
+<nav class="mobile-menu" id="mobileMenu" aria-label="Menú móvil">
+  <a href="#inicio">Inicio</a>
+  <a href="#categorias">Categorías</a>
+  <a href="#catalogo">Colección</a>
+  <a href="#como-pedir">Cómo pedir</a>
+  <a href="#contacto">Contacto</a>
+</nav>
+
 <main>
-  <section class="hero" id="inicio" aria-label="Colección sneakers">
-    <img src="assets/sneakers-hero-reference.jpg" alt="Composición editorial en blanco y negro de sneakers">
-    <div class="hero-shade"></div>
-    <div class="hero-top"><span>01 / EXC.</span><i></i></div>
-    <div class="hero-copy"><p class="eyebrow">EXCLUSIVE STYLE</p><h1>SNEAKERS<span>.</span></h1><p>PARA CADA PASO.</p><a href="#catalogo" class="text-link">EXPLORAR COLECCIÓN <b>↗</b></a></div>
-    <div class="hero-foot">EXC. <span>|</span> EXCLUSIVE STYLE</div>
-  </section>
-  <section class="intro" id="marca"><p class="eyebrow">STYLE BEYOND BORDERS.</p><h2>Estilo que<br><em>trasciende.</em></h2><p>Una selección de piezas para quienes construyen su propio camino.</p></section>
-  <section class="categories section-pad" id="categorias"><div class="section-head"><div><p class="eyebrow">DESCUBRE EXC.</p><h2>CATEGORÍAS</h2></div><span>02 / 04</span></div>
-    <div class="category-grid">
-      <a class="category-card sneaker-cat" href="#catalogo"><div class="cat-photo"><img src="assets/sneakers-hero-reference.jpg" alt="Colección de sneakers"></div><div class="cat-label"><span>01</span><strong>SNEAKERS</strong><b>↗</b></div></a>
-      <a class="category-card clothing-cat" href="#catalogo"><div class="cat-icon"><img src="assets/clothing-category-icon.jpg" alt="Ícono de camiseta"></div><div class="cat-label"><span>02</span><strong>ROPA</strong><b>↗</b></div></a>
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="hero-media">
+      <img src="assets/sneakers-hero-reference.jpg" alt="Sneakers en blanco y negro, colección EXC.">
+    </div>
+    <div class="hero-copy">
+      <p class="tagline">Style beyond borders.</p>
+      <h1>Sneakers y ropa para quien marca su propio camino.</h1>
+      <p class="lead">Elige tus piezas, arma tu carrito y envía el pedido directo a nuestro WhatsApp.</p>
+      <div class="hero-actions">
+        <a href="#catalogo" class="btn btn-solid">Ver colección</a>
+        <a href="#como-pedir" class="btn btn-ghost">Cómo pedir</a>
+      </div>
     </div>
   </section>
-  <section class="collection section-pad" id="catalogo"><div class="section-head"><div><p class="eyebrow">SELECCIÓN EXCLUSIVA</p><h2>COLECCIÓN</h2></div><span>03 / 04</span></div>
-    <div class="empty-state"><div class="empty-mark">EXC.</div><h3>La colección está tomando forma.</h3><p>Pronto encontrarás aquí nuestros productos, fotografías, tallas y precios.</p><button id="notifyBtn" class="outline-btn">AVÍSAME POR WHATSAPP</button></div>
+
+  <!-- CATEGORÍAS -->
+  <section class="categories section-pad" id="categorias">
+    <div class="section-head"><h2>Categorías</h2></div>
+    <div class="category-grid">
+      <a class="category-card" href="#catalogo" data-filter-link="sneakers">
+        <div class="cat-photo"><img src="assets/sneakers-hero-reference.jpg" alt="Sneakers"></div>
+        <div class="cat-label"><strong>Sneakers</strong><b>↗</b></div>
+      </a>
+      <a class="category-card" href="#catalogo" data-filter-link="ropa">
+        <div class="cat-icon"><img src="assets/clothing-category-icon.jpg" alt="Ropa"></div>
+        <div class="cat-label"><strong>Ropa</strong><b>↗</b></div>
+      </a>
+    </div>
   </section>
-  <section class="brand-banner"><p>STYLE BEYOND BORDERS.</p><div>EXC<span>.</span></div><small>EXCLUSIVE STYLE</small></section>
+
+  <!-- COLECCIÓN -->
+  <section class="collection section-pad" id="catalogo">
+    <div class="section-head">
+      <h2>Colección</h2>
+      <div class="filters" role="group" aria-label="Filtrar productos">
+        <button class="chip is-active" data-filter="todo">Todo</button>
+        <button class="chip" data-filter="sneakers">Sneakers</button>
+        <button class="chip" data-filter="ropa">Ropa</button>
+      </div>
+    </div>
+    <div class="product-grid" id="productGrid"></div>
+  </section>
+
+  <!-- CÓMO PEDIR -->
+  <section class="how section-pad" id="como-pedir">
+    <div class="section-head"><h2>Cómo pedir</h2></div>
+    <ol class="steps">
+      <li><span class="step-n">1</span><div><h3>Elige tus piezas</h3><p>Escoge la talla y agrégalas al carrito.</p></div></li>
+      <li><span class="step-n">2</span><div><h3>Envía el pedido por WhatsApp</h3><p>Con un toque se abre el chat con tu pedido ya escrito.</p></div></li>
+      <li><span class="step-n">3</span><div><h3>Confirmamos contigo</h3><p>Te respondemos con disponibilidad, envío y forma de pago.</p></div></li>
+    </ol>
+  </section>
+
+  <!-- MARCA -->
+  <section class="brand-banner">
+    <div class="brand-mark">EXC<span>.</span></div>
+    <p>Exclusive Style — Style beyond borders.</p>
+  </section>
 </main>
-<footer><a class="footer-logo" href="#inicio">EXC.</a><p>EXCLUSIVE STYLE · STYLE BEYOND BORDERS.</p><div class="footer-links"><a href="#categorias">Categorías</a><a href="#catalogo">Colección</a><a href="#marca">Nosotros</a></div><small>© <span id="year"></span> EXC. Todos los derechos reservados.</small></footer>
+
+<footer id="contacto">
+  <a class="footer-logo" href="#inicio">EXC.</a>
+  <p>Exclusive Style</p>
+  <a class="btn btn-wa" id="contactWa" href="#" target="_blank" rel="noopener">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.05-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.3-.5.1-1.1.1-1.8-.1a16 16 0 0 1-5.4-3.3c-1.6-1.5-2.7-3.4-2.8-3.6-.1-.2-.7-1.1-.7-2.1s.5-1.5.7-1.7c.2-.2.4-.2.6-.2h.4c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.3 0 .5l-.3.4-.4.5c-.1.1-.3.3-.1.6.2.3.7 1.2 1.5 1.9 1 .9 1.9 1.2 2.2 1.3.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l2 .9c.3.1.5.2.5.3.1.2.1.8-.1 1.5Z"/></svg>
+    Escríbenos por WhatsApp
+  </a>
+  <div class="footer-links"><a href="#categorias">Categorías</a><a href="#catalogo">Colección</a><a href="#como-pedir">Cómo pedir</a></div>
+  <small>© <span id="year"></span> EXC. Todos los derechos reservados.</small>
+</footer>
+
+<!-- CARRITO -->
+<div class="overlay" id="overlay" hidden></div>
+<aside class="cart" id="cart" aria-label="Carrito de compras" aria-hidden="true">
+  <div class="cart-head">
+    <h2>Tu carrito</h2>
+    <button class="icon-btn" id="closeCart" aria-label="Cerrar carrito">✕</button>
+  </div>
+  <div class="cart-body" id="cartItems"></div>
+  <div class="cart-foot" id="cartFoot">
+    <div class="cart-fields">
+      <label>Tu nombre<input id="custName" type="text" autocomplete="name" placeholder="Nombre y apellido"></label>
+      <label>Ciudad y dirección de envío<input id="custCity" type="text" autocomplete="street-address" placeholder="Ciudad, barrio, dirección"></label>
+    </div>
+    <div class="cart-total"><span>Total</span><strong id="cartTotal">$0</strong></div>
+    <button class="btn btn-wa btn-block" id="checkoutBtn">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.05-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.3-.5.1-1.1.1-1.8-.1a16 16 0 0 1-5.4-3.3c-1.6-1.5-2.7-3.4-2.8-3.6-.1-.2-.7-1.1-.7-2.1s.5-1.5.7-1.7c.2-.2.4-.2.6-.2h.4c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.3 0 .5l-.3.4-.4.5c-.1.1-.3.3-.1.6.2.3.7 1.2 1.5 1.9 1 .9 1.9 1.2 2.2 1.3.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l2 .9c.3.1.5.2.5.3.1.2.1.8-.1 1.5Z"/></svg>
+      Enviar pedido por WhatsApp
+    </button>
+    <button class="link-btn" id="clearCart">Vaciar carrito</button>
+  </div>
+</aside>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="products.js"></script>
 <script src="script.js"></script>
-</body></html>
+</body>
+</html>

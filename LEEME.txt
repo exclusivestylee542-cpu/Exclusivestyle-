@@ -1,18 +1,28 @@
-EXC. — EXCLUSIVE STYLE | PRIMERA BASE VISUAL
+EXC. — EXCLUSIVE STYLE | V2 (productos, carrito y WhatsApp)
 
-Esta es la primera versión de estructura visual para la nueva tienda EXC., separada del proyecto Majestych V10.6.
+QUÉ HAY DE NUEVO
+- Fondo con luz suave y textura tipo cuero (como el logo), ya no es negro plano.
+- Sección de productos con filtro Sneakers / Ropa y selección de talla.
+- Carrito lateral: cantidades, total, se guarda aunque recargues la página.
+- Botón "Enviar pedido por WhatsApp": abre el chat con el pedido ya escrito
+  (productos, tallas, cantidades, total, nombre y dirección del cliente).
+- Botón de WhatsApp también en el pie de página.
 
-Archivos:
-- index.html: estructura de la página.
-- style.css: diseño adaptable a celulares y computadores.
-- script.js: menú móvil, año automático y botón de contacto por WhatsApp.
-- assets/: las tres imágenes de referencia entregadas para logo, portada sneakers e ícono de ropa.
+LO PRIMERO QUE DEBES HACER
+Abre products.js y cambia:
+  whatsapp: "57XXXXXXXXXX"   ->   tu número con código de país, solo dígitos
+                                  (Colombia: 57 + número, ej. "573001234567")
 
-PARA PROBAR:
-1. Extrae el ZIP completo.
-2. Abre index.html en Chrome, Safari o Edge.
+CAMBIAR PRODUCTOS
+Todo está en products.js. Cada producto tiene: id, name, category
+("sneakers" o "ropa"), price (en pesos, sin puntos), sizes e image.
+Los 8 productos actuales son DE EJEMPLO.
+Para poner foto: guárdala en assets/products/ y escribe la ruta en image,
+por ejemplo  image: "assets/products/sneaker-01.jpg"
+(fotos cuadradas se ven mejor).
 
-IMPORTANTE:
-Esta entrega es la primera base visual. Aún no incluye productos reales, catálogo dinámico, carrito funcional, cálculo de envíos ni pasarela Wompi. Esas funciones se integrarán en la siguiente etapa reutilizando y adaptando la lógica del ZIP Majestych V10.6. La integración de pagos requiere configurar y probar sus credenciales y backend; no se ha activado ningún cobro.
+PARA PROBAR
+Extrae el ZIP completo y abre index.html en Chrome, Safari o Edge.
 
-No modifica ni reemplaza el ZIP original de Majestych.
+NOTA
+No hay cobro en línea: el pago y el envío se acuerdan por WhatsApp.
