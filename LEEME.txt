@@ -1,0 +1,18 @@
+EXC. — EXCLUSIVE STYLE | PRIMERA BASE VISUAL
+
+Esta es la primera versión de estructura visual para la nueva tienda EXC., separada del proyecto Majestych V10.6.
+
+Archivos:
+- index.html: estructura de la página.
+- style.css: diseño adaptable a celulares y computadores.
+- script.js: menú móvil, año automático y botón de contacto por WhatsApp.
+- assets/: las tres imágenes de referencia entregadas para logo, portada sneakers e ícono de ropa.
+
+PARA PROBAR:
+1. Extrae el ZIP completo.
+2. Abre index.html en Chrome, Safari o Edge.
+
+IMPORTANTE:
+Esta entrega es la primera base visual. Aún no incluye productos reales, catálogo dinámico, carrito funcional, cálculo de envíos ni pasarela Wompi. Esas funciones se integrarán en la siguiente etapa reutilizando y adaptando la lógica del ZIP Majestych V10.6. La integración de pagos requiere configurar y probar sus credenciales y backend; no se ha activado ningún cobro.
+
+No modifica ni reemplaza el ZIP original de Majestych.
