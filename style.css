@@ -445,3 +445,6 @@ footer small{display:block;margin-top:40px;color:#777;font-size:9px;letter-spaci
 .insta h2{font:400 clamp(28px,5vw,38px)/1.1 var(--serif);margin:0 0 14px}
 .insta-text{color:var(--silver);margin:0 auto 26px;max-width:460px;line-height:1.6}
 .insta-btn{display:inline-flex;align-items:center;gap:10px}
+
+/* 6 categorías */
+@media(min-width:1000px){.badge-grid{grid-template-columns:repeat(6,minmax(0,1fr))}}
