@@ -8,13 +8,15 @@ const STORE = {
   // Número de WhatsApp con código de país, solo dígitos. Colombia = 57.
   // Ejemplo: "573001234567"
   whatsapp: "57XXXXXXXXXX",
+  instagram: "",
+  facebook: "",
   currency: "COP"
 };
 
 const TALLAS_CALZADO = ["37", "38", "39", "40", "41", "42", "43", "44"];
 const TALLAS_ROPA = ["S", "M", "L", "XL"];
 
-/* category: "sneakers", "ropa" o "accesorios".
+/* category: "sneakers", "ropa", "relojes" o "accesorios".
    new: true  -> aparece en "New in" y con etiqueta "New". */
 
 /* Productos de EJEMPLO: cambia nombre, precio y agrega tu foto.
@@ -28,5 +30,6 @@ const PRODUCTS = [
   { id: "ro-01", name: "Camiseta Essential Negra",  category: "ropa", price: 89000,  sizes: TALLAS_ROPA, image: "", new: true },
   { id: "ro-02", name: "Camiseta Essential Blanca", category: "ropa", price: 89000,  sizes: TALLAS_ROPA, image: "" },
   { id: "ro-03", name: "Buzo Oversize EXC.",        category: "ropa", price: 169000, sizes: TALLAS_ROPA, image: "" },
-  { id: "ac-01", name: "Gorra EXC.",                category: "accesorios", price: 69000, sizes: ["Única"], image: "", new: true }
+  { id: "wa-01", name: "Watch Essential 01 (referencia)", category: "relojes", price: 189000, sizes: ["Única"], image: "", new: true },
+  { id: "ac-01", name: "Gorra EXC. (referencia)", category: "accesorios", price: 69000, sizes: ["Única"], image: "", new: true }
 ];

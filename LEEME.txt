@@ -1,32 +1,43 @@
-EXC. — EXCLUSIVE STYLE | V3 (mármol negro + fotos + carrito + WhatsApp)
+EXC. — EXCLUSIVE STYLE
+Primera versión visual mejorada | Noviembre 2026
 
-QUÉ HAY DE NUEVO EN V3
-- Fondo de mármol negro minimalista (assets/marmol-negro.jpg).
-- Categorías con tus insignias: New in, Sneakers, Ropa y Accesorios (El toque final).
-  Cada una filtra la colección.
-- Insignia Worldwide en la sección de envíos.
-- Foto de campaña (sneakers + bolsa EXC.) como banner antes del pie de página.
-- Portada de sneakers en el inicio.
+CONTENIDO
+- Tienda responsive para móvil, tablet y computador.
+- Identidad visual negra con fondo de mármol.
+- Categorías: New In, Sneakers, Ropa, Relojes y Accesorios.
+- Filtros del catálogo.
+- Carrito persistente en el navegador.
+- Formulario de pedido que prepara el mensaje para WhatsApp.
+- Preferencia de pago incluida en el mensaje del pedido.
+- Enlaces de Instagram y Facebook configurables.
 
-LO PRIMERO QUE DEBES HACER
-Abre products.js y cambia:
-  whatsapp: "57XXXXXXXXXX"   ->   tu número con código de país, solo dígitos
-                                  (Colombia: 57 + número, ej. "573001234567")
+ANTES DE PUBLICAR
+1. Abre products.js.
+2. Cambia STORE.whatsapp por el número real con indicativo de país, solo números.
+   Ejemplo Colombia: 573001234567
+3. Pega las URLs reales en STORE.instagram y STORE.facebook.
+4. Reemplaza los productos de ejemplo, precios, tallas y fotografías en PRODUCTS.
+   Los productos y precios actuales son demostrativos, no son inventario ni precios confirmados.
+5. Prueba el carrito y el pedido en móvil y computador.
 
-CAMBIAR PRODUCTOS
-Todo está en products.js. Cada producto tiene: id, name, category
-("sneakers", "ropa" o "accesorios"), price (en pesos, sin puntos), sizes,
-image y new (true = aparece en "New in" con etiqueta).
-Los 8 productos actuales son DE EJEMPLO.
-Para poner foto: guárdala en assets/products/ y escribe la ruta en image,
-por ejemplo  image: "assets/products/sneaker-01.jpg"
-(fotos cuadradas se ven mejor).
+IMPORTANTE SOBRE PAGOS
+Esta versión NO cobra en línea ni confirma pagos automáticamente. La opción "Pago en línea"
+solo indica una preferencia y se envía por WhatsApp para coordinar. Para recibir pagos reales
+se debe integrar una pasarela (por ejemplo Wompi, PayU o Mercado Pago) y un backend seguro.
+El pago contra entrega también debe confirmarse con el vendedor y la transportadora.
 
-CAMBIAR EL FONDO
-Reemplaza assets/marmol-negro.jpg por otra imagen con el mismo nombre.
+REDES Y WHATSAPP
+Los enlaces de Instagram/Facebook permanecen ocultos hasta que agregues sus URLs reales.
+El botón de WhatsApp no abrirá un chat de pedidos hasta que configures el número real.
 
-PARA PROBAR
-Extrae el ZIP completo y abre index.html en Chrome, Safari o Edge.
+PUBLICACIÓN
+Puedes subir el contenido de esta carpeta a un repositorio GitHub y activar GitHub Pages.
+GitHub Pages sirve el frontend estático; no sustituye un backend para pagos, inventario
+multiusuario, cuentas o administración segura.
 
-NOTA
-No hay cobro en línea: el pago y el envío se acuerdan por WhatsApp.
+ESTRUCTURA
+- index.html: página principal y componentes.
+- style.css: estilos responsive y tema visual.
+- script.js: filtros, carrito y armado del pedido.
+- products.js: configuración de la tienda y catálogo.
+- assets/: logos de referencia, banners, mármol e insignias.

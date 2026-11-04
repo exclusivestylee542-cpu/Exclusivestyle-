@@ -231,3 +231,56 @@ footer small{color:#77746f;font-size:12px}
   html{scroll-behavior:auto}
   *{transition:none!important;animation:none!important}
 }
+
+
+/* ---------- EXC. EDITORIAL LUXURY UPDATE ---------- */
+.topbar{height:76px;background:rgba(3,3,4,.88);border-bottom:1px solid #ffffff20}
+.wordmark{font-size:48px;letter-spacing:-3.5px}
+.hero{position:relative}
+.hero-media{border:1px solid #ffffff24;position:relative}
+.hero-media:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,#0008)}
+.hero-copy .tagline{letter-spacing:5px;font-size:11px}
+.hero-copy h1{letter-spacing:-1.2px}
+.section-head h2{letter-spacing:.2px}
+.categories{background:linear-gradient(180deg,#05050570,#05050525)}
+.badge-grid{gap:34px 22px}
+.badge-card{padding:10px 8px 14px;border:1px solid #ffffff12;background:linear-gradient(145deg,#171717a8,#050505a8);transition:border-color .3s,transform .3s}
+.badge-card:hover{border-color:#ffffff55;transform:translateY(-3px)}
+.badge-card img{max-width:190px;border:1px solid #ffffff20}
+.badge-card span{text-transform:uppercase;letter-spacing:3px;font:400 13px var(--sans)}
+.collection{background:rgba(0,0,0,.72);backdrop-filter:blur(8px)}
+.product{background:linear-gradient(155deg,rgba(29,29,30,.94),rgba(7,7,8,.96));border-color:#ffffff1c;transition:transform .25s,border-color .25s}
+.product:hover{transform:translateY(-4px);border-color:#ffffff55}
+.product-img{background:radial-gradient(circle at 50% 35%,#343437,#0b0b0c 76%)}
+.product-name{font-size:18px}
+.add-btn{letter-spacing:1px;text-transform:uppercase;font-size:11px}
+.shipping{background:rgba(0,0,0,.55)}
+.campaign{background:linear-gradient(180deg,#05050555,#000b)}
+.campaign img{border-color:#ffffff24}
+footer{background:#030303e8}
+.footer-logo{font-size:54px}
+.social-links{display:flex;justify-content:center;gap:24px;margin:20px 0 8px}
+.social-links a{color:var(--silver);font-size:12px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border-bottom:1px solid #ffffff55;padding-bottom:5px}
+.social-links a:hover{color:#fff;border-color:#fff}
+.footer-note{font-size:10px!important;letter-spacing:4px;color:#777!important}
+.cart-fields select{width:100%;background:var(--surface);border:1px solid var(--line);color:var(--white);padding:11px 12px;font:inherit;font-size:14px}
+.cart-fields select option{background:#111;color:#fff}
+[hidden]{display:none!important}
+@media(max-width:420px){
+  .topbar{height:64px;padding:0 5%}
+  .wordmark{font-size:40px}
+  .hero{padding-left:5%;padding-right:5%}
+  .hero-copy h1{font-size:36px}
+  .section-pad{padding:54px 5%}
+  .badge-grid{gap:14px 10px}
+  .badge-card img{max-width:145px}
+  .badge-card span{font-size:11px;letter-spacing:2px}
+  .product-info{padding:11px}
+  .product-name{font-size:15px}
+}
+@media(min-width:760px){
+  .badge-grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:18px}
+  .badge-card{padding:18px 10px}
+  .badge-card img{max-width:160px}
+  .hero{gap:7vw}
+}

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600">
+<rect width="600" height="600" fill="#050505"/>
+<circle cx="300" cy="300" r="270" fill="none" stroke="#f5f5f5" stroke-width="3"/>
+<circle cx="300" cy="300" r="250" fill="none" stroke="#f5f5f5" stroke-width="2"/>
+<g fill="none" stroke="#f5f5f5" stroke-width="13" stroke-linecap="round" stroke-linejoin="round">
+<path d="M250 115h100l22 95v180l-22 95H250l-22-95V210z"/>
+<rect x="205" y="205" width="190" height="190" rx="38"/>
+<circle cx="300" cy="300" r="72"/>
+<path d="M300 245v58l42 26"/>
+</g><text x="300" y="510" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="35" letter-spacing="13">WATCHES</text></svg>

@@ -68,6 +68,10 @@
         <img src="assets/badge-ropa.jpg" alt="Ropa" loading="lazy">
         <span>Ropa</span>
       </a>
+      <a class="badge-card" href="#catalogo" data-filter-link="relojes">
+        <img src="assets/badge-relojes.svg" alt="Relojes" loading="lazy">
+        <span>Relojes</span>
+      </a>
       <a class="badge-card" href="#catalogo" data-filter-link="accesorios">
         <img src="assets/badge-toque-final.jpg" alt="Accesorios: el toque final" loading="lazy">
         <span>Accesorios</span>
@@ -84,6 +88,7 @@
         <button class="chip" data-filter="nuevo">New in</button>
         <button class="chip" data-filter="sneakers">Sneakers</button>
         <button class="chip" data-filter="ropa">Ropa</button>
+        <button class="chip" data-filter="relojes">Relojes</button>
         <button class="chip" data-filter="accesorios">Accesorios</button>
       </div>
     </div>
@@ -124,6 +129,11 @@
     Escríbenos por WhatsApp
   </a>
   <div class="footer-links"><a href="#categorias">Categorías</a><a href="#catalogo">Colección</a><a href="#como-pedir">Cómo pedir</a></div>
+  <div class="social-links" aria-label="Redes sociales">
+    <a id="instagramLink" href="#" target="_blank" rel="noopener" hidden>Instagram</a>
+    <a id="facebookLink" href="#" target="_blank" rel="noopener" hidden>Facebook</a>
+  </div>
+  <p class="footer-note">SNEAKERS · APPAREL · WATCHES</p>
   <small>© <span id="year"></span> EXC. Todos los derechos reservados.</small>
 </footer>
 
@@ -138,7 +148,15 @@
   <div class="cart-foot" id="cartFoot">
     <div class="cart-fields">
       <label>Tu nombre<input id="custName" type="text" autocomplete="name" placeholder="Nombre y apellido"></label>
+      <label>Teléfono de contacto<input id="custPhone" type="tel" autocomplete="tel" placeholder="Tu número de celular"></label>
       <label>Ciudad y dirección de envío<input id="custCity" type="text" autocomplete="street-address" placeholder="Ciudad, barrio, dirección"></label>
+      <label>Forma de pago preferida
+        <select id="custPayment">
+          <option value="Contra entrega (por confirmar)">Contra entrega</option>
+          <option value="Transferencia (coordinar por WhatsApp)">Transferencia bancaria</option>
+          <option value="Pago en línea (coordinar por WhatsApp)">Pago en línea (coordinar por WhatsApp)</option>
+        </select>
+      </label>
     </div>
     <div class="cart-total"><span>Total</span><strong id="cartTotal">$0</strong></div>
     <button class="btn btn-wa btn-block" id="checkoutBtn">

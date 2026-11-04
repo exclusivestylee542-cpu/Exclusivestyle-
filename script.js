@@ -11,7 +11,7 @@
       return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
     });
   };
-  var CATS = { sneakers: 'Sneakers', ropa: 'Ropa', accesorios: 'Accesorios' };
+  var CATS = { sneakers: 'Sneakers', ropa: 'Ropa', relojes: 'Relojes', accesorios: 'Accesorios' };
   var toastTimer;
   function toast(msg) {
     var t = $('toast');
@@ -27,7 +27,12 @@
     var base = waReady ? 'https://wa.me/' + STORE.whatsapp : 'https://wa.me/';
     return base + '?text=' + encodeURIComponent(text);
   }
-  $('contactWa').href = waUrl('Hola EXC., quiero más información sobre la colección.');
+  $('contactWa').href = waReady ? waUrl('Hola EXC., quiero más información sobre la colección.') : '#';
+  // Las redes solo aparecen cuando se configuran sus URLs reales en products.js.
+  [['instagramLink', STORE.instagram], ['facebookLink', STORE.facebook]].forEach(function (item) {
+    var link = $(item[0]);
+    if (link && item[1]) { link.href = item[1]; link.hidden = false; }
+  });
 
   /* ---------- menú móvil ---------- */
   var menuBtn = $('menuBtn'), menu = $('mobileMenu');
@@ -200,11 +205,15 @@
     });
     var name = $('custName').value.trim();
     var city = $('custCity').value.trim();
-    var msg = 'Hola EXC., quiero hacer este pedido:\n\n' + lines.join('\n') +
-      '\n\nTotal: ' + money(total) +
-      '\n\nNombre: ' + (name || '(por confirmar)') +
-      '\nCiudad y dirección: ' + (city || '(por confirmar)');
-    if (!waReady) toast('Falta configurar el número de WhatsApp en products.js');
+    var phone = $('custPhone').value.trim();
+    var payment = $('custPayment').value;
+    var msg = 'Hola EXC., quiero hacer este pedido:\\n\\n' + lines.join('\\n') +
+      '\\n\\nTotal productos: ' + money(total) +
+      '\\nForma de pago preferida: ' + payment +
+      '\\nNombre: ' + (name || '(por confirmar)') +
+      '\\nTeléfono: ' + (phone || '(por confirmar)') +
+      '\\nCiudad y dirección: ' + (city || '(por confirmar)');
+    if (!waReady) { toast('Configura tu WhatsApp real en products.js antes de recibir pedidos.'); return; }
     window.open(waUrl(msg), '_blank', 'noopener');
   });
 
