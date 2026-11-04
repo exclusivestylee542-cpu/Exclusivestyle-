@@ -423,3 +423,25 @@ footer small{display:block;margin-top:40px;color:#777;font-size:9px;letter-spaci
 .brand-intro h1{font-family:var(--serif,Georgia,serif);font-size:clamp(32px,6vw,62px);font-weight:400;letter-spacing:5px;color:#fff;margin:0}
 .brand-intro p:last-child{font-size:10px;letter-spacing:4px;color:#aaa;margin:15px 0 0}
 @media(max-width:600px){.brand-intro{min-height:190px;padding:42px 5% 34px}.brand-intro h1{font-size:34px;letter-spacing:3px}.brand-intro p:last-child{font-size:9px;letter-spacing:2.5px}}
+
+/* QUIÉNES SOMOS */
+.about{background:rgba(8,8,8,.86)}
+.about .section-head{justify-content:center;text-align:center}
+.story{display:grid;gap:26px;align-items:center;max-width:980px;margin:0 auto 56px}
+.story:last-child{margin-bottom:0}
+.story img{width:100%;max-width:360px;margin:0 auto;display:block;border:1px solid #ffffff2e;box-shadow:0 20px 60px #000c}
+.story-kicker{font:500 11px var(--sans);letter-spacing:4px;color:var(--muted);margin:0 0 12px}
+.story-copy h3{font:400 clamp(26px,4vw,38px)/1.15 var(--serif);margin:0 0 14px}
+.story-copy p:last-child{color:var(--silver);font-size:16px;line-height:1.6;margin:0}
+@media(max-width:759px){.story-copy{text-align:center}}
+@media(min-width:760px){
+  .story{grid-template-columns:360px 1fr;gap:60px}
+  .story-rev{grid-template-columns:1fr 360px}
+  .story-rev img{order:2}
+}
+
+/* INSTAGRAM */
+.insta{text-align:center;background:rgba(5,5,5,.9);border-top:1px solid #ffffff16;border-bottom:1px solid #ffffff16}
+.insta h2{font:400 clamp(28px,5vw,38px)/1.1 var(--serif);margin:0 0 14px}
+.insta-text{color:var(--silver);margin:0 auto 26px;max-width:460px;line-height:1.6}
+.insta-btn{display:inline-flex;align-items:center;gap:10px}

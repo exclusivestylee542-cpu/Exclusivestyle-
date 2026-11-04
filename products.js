@@ -8,7 +8,7 @@ const STORE = {
   // Número de WhatsApp con código de país, solo dígitos. Colombia = 57.
   // Ejemplo: "573001234567"
   whatsapp: "57XXXXXXXXXX",
-  instagram: "",
+  instagram: "https://www.instagram.com/exc.store_",
   facebook: "",
   currency: "COP"
 };
