@@ -11,7 +11,7 @@
       return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
     });
   };
-  var CATS = { sneakers: 'Sneakers', ropa: 'Ropa' };
+  var CATS = { sneakers: 'Sneakers', ropa: 'Ropa', accesorios: 'Accesorios' };
   var toastTimer;
   function toast(msg) {
     var t = $('toast');
@@ -59,13 +59,14 @@
   }
 
   function renderProducts() {
-    var list = PRODUCTS.filter(function (p) { return filter === 'todo' || p.category === filter; });
+    var list = PRODUCTS.filter(function (p) { return filter === 'todo' || (filter === 'nuevo' ? p.new : p.category === filter); });
     $('productGrid').innerHTML = list.map(function (p) {
       var sizes = p.sizes.map(function (s) {
         var on = picked[p.id] === s;
         return '<button type="button" class="size" data-size="' + esc(s) + '" aria-pressed="' + on + '">' + esc(s) + '</button>';
       }).join('');
       return '<article class="product" data-id="' + p.id + '">' +
+        (p.new ? '<span class="new-tag">New</span>' : '') +
         '<div class="product-img">' + visual(p) + '</div>' +
         '<div class="product-info">' +
           '<span class="product-cat">' + CATS[p.category] + '</span>' +

@@ -55,14 +55,22 @@
   <!-- CATEGORÍAS -->
   <section class="categories section-pad" id="categorias">
     <div class="section-head"><h2>Categorías</h2></div>
-    <div class="category-grid">
-      <a class="category-card" href="#catalogo" data-filter-link="sneakers">
-        <div class="cat-photo"><img src="assets/sneakers-hero-reference.jpg" alt="Sneakers"></div>
-        <div class="cat-label"><strong>Sneakers</strong><b>↗</b></div>
+    <div class="badge-grid">
+      <a class="badge-card" href="#catalogo" data-filter-link="nuevo">
+        <img src="assets/badge-new-in.jpg" alt="New in: lo más reciente" loading="lazy">
+        <span>New in</span>
       </a>
-      <a class="category-card" href="#catalogo" data-filter-link="ropa">
-        <div class="cat-icon"><img src="assets/clothing-category-icon.jpg" alt="Ropa"></div>
-        <div class="cat-label"><strong>Ropa</strong><b>↗</b></div>
+      <a class="badge-card" href="#catalogo" data-filter-link="sneakers">
+        <img src="assets/badge-sneakers.jpg" alt="Sneakers" loading="lazy">
+        <span>Sneakers</span>
+      </a>
+      <a class="badge-card" href="#catalogo" data-filter-link="ropa">
+        <img src="assets/badge-ropa.jpg" alt="Ropa" loading="lazy">
+        <span>Ropa</span>
+      </a>
+      <a class="badge-card" href="#catalogo" data-filter-link="accesorios">
+        <img src="assets/badge-toque-final.jpg" alt="Accesorios: el toque final" loading="lazy">
+        <span>Accesorios</span>
       </a>
     </div>
   </section>
@@ -73,8 +81,10 @@
       <h2>Colección</h2>
       <div class="filters" role="group" aria-label="Filtrar productos">
         <button class="chip is-active" data-filter="todo">Todo</button>
+        <button class="chip" data-filter="nuevo">New in</button>
         <button class="chip" data-filter="sneakers">Sneakers</button>
         <button class="chip" data-filter="ropa">Ropa</button>
+        <button class="chip" data-filter="accesorios">Accesorios</button>
       </div>
     </div>
     <div class="product-grid" id="productGrid"></div>
@@ -90,10 +100,19 @@
     </ol>
   </section>
 
-  <!-- MARCA -->
-  <section class="brand-banner">
-    <div class="brand-mark">EXC<span>.</span></div>
-    <p>Exclusive Style — Style beyond borders.</p>
+  <!-- ENVÍOS -->
+  <section class="shipping section-pad" id="envios">
+    <img class="ship-badge" src="assets/badge-worldwide.jpg" alt="Worldwide" loading="lazy">
+    <div class="ship-copy">
+      <h2>Estés donde estés</h2>
+      <p>Cuéntanos a dónde quieres recibir tu pedido y coordinamos el envío contigo por WhatsApp.</p>
+    </div>
+  </section>
+
+  <!-- CAMPAÑA -->
+  <section class="campaign" aria-label="Campaña EXC.">
+    <img src="assets/campana-exc.jpg" alt="Sneakers, bolsa y banqueta EXC. Exclusive Style sobre tela negra" loading="lazy">
+    <a href="#catalogo" class="btn btn-ghost">Ver colección</a>
   </section>
 </main>
 

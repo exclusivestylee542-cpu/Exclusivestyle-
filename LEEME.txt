@@ -1,12 +1,12 @@
-EXC. — EXCLUSIVE STYLE | V2 (productos, carrito y WhatsApp)
+EXC. — EXCLUSIVE STYLE | V3 (mármol negro + fotos + carrito + WhatsApp)
 
-QUÉ HAY DE NUEVO
-- Fondo con luz suave y textura tipo cuero (como el logo), ya no es negro plano.
-- Sección de productos con filtro Sneakers / Ropa y selección de talla.
-- Carrito lateral: cantidades, total, se guarda aunque recargues la página.
-- Botón "Enviar pedido por WhatsApp": abre el chat con el pedido ya escrito
-  (productos, tallas, cantidades, total, nombre y dirección del cliente).
-- Botón de WhatsApp también en el pie de página.
+QUÉ HAY DE NUEVO EN V3
+- Fondo de mármol negro minimalista (assets/marmol-negro.jpg).
+- Categorías con tus insignias: New in, Sneakers, Ropa y Accesorios (El toque final).
+  Cada una filtra la colección.
+- Insignia Worldwide en la sección de envíos.
+- Foto de campaña (sneakers + bolsa EXC.) como banner antes del pie de página.
+- Portada de sneakers en el inicio.
 
 LO PRIMERO QUE DEBES HACER
 Abre products.js y cambia:
@@ -15,11 +15,15 @@ Abre products.js y cambia:
 
 CAMBIAR PRODUCTOS
 Todo está en products.js. Cada producto tiene: id, name, category
-("sneakers" o "ropa"), price (en pesos, sin puntos), sizes e image.
+("sneakers", "ropa" o "accesorios"), price (en pesos, sin puntos), sizes,
+image y new (true = aparece en "New in" con etiqueta).
 Los 8 productos actuales son DE EJEMPLO.
 Para poner foto: guárdala en assets/products/ y escribe la ruta en image,
 por ejemplo  image: "assets/products/sneaker-01.jpg"
 (fotos cuadradas se ven mejor).
+
+CAMBIAR EL FONDO
+Reemplaza assets/marmol-negro.jpg por otra imagen con el mismo nombre.
 
 PARA PROBAR
 Extrae el ZIP completo y abre index.html en Chrome, Safari o Edge.
