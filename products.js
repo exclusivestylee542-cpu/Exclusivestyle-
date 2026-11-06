@@ -29,6 +29,13 @@ function rango(desde, hasta) {
    image: ruta de la foto, por ejemplo "fotos-sneaker-01.jpg".
    Si image está vacío se muestra un espacio con la marca EXC. */
 const PRODUCTS = [
+  { id: "sn-01", name: "Nike TN Negro", category: "sneakers", price: 189900, sizes: TALLAS_CALZADO, image: "tenis-01.jpg", new: true },
+  { id: "sn-02", name: "Clemont Negro Rojo", category: "sneakers", price: 149900, sizes: TALLAS_CALZADO, image: "tenis-02.jpg", new: true },
+  { id: "sn-03", name: "New Balance 9060 Gris Negro", category: "sneakers", price: 189900, sizes: TALLAS_CALZADO, image: "tenis-03.jpg", new: true },
+  { id: "sn-04", name: "Calvin Klein CK Negro", category: "sneakers", price: 129900, sizes: rango("34", "43"), image: "tenis-04.jpg", new: true },
+  { id: "sn-05", name: "Creative Recreation Negro Dorado", category: "sneakers", price: 179900, sizes: TALLAS_CALZADO, image: "tenis-05.jpg", new: true },
+  { id: "sn-06", name: "On Cloud Negro", category: "sneakers", price: 149900, sizes: rango("34", "43"), image: "tenis-06.jpg", new: true },
+  { id: "sn-07", name: "Guess Blanco Negro", category: "sneakers", price: 179900, sizes: TALLAS_CALZADO, image: "tenis-07.jpg", new: true },
   { id: "ni-01", name: "Plata Espejo Kids", category: "ninos", price: 95000, sizes: rango("21", "33"), image: "nino-01.jpg", new: true },
   { id: "ni-02", name: "Black Wings Kids", category: "ninos", price: 95000, sizes: rango("21", "33"), image: "nino-02.jpg", new: true },
   { id: "ni-03", name: "Charol Rojo Kids", category: "ninos", price: 95000, sizes: rango("21", "33"), image: "nino-03.jpg", new: true },
