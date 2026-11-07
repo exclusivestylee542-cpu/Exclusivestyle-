@@ -7,9 +7,9 @@
 const STORE = {
   // Número de WhatsApp con código de país, solo dígitos. Colombia = 57.
   // Ejemplo: "573001234567"
-  whatsapp: "573238765716",
-  instagram: "https://www.instagram.com/exc.store_",
-  facebook: "",
+  whatsapp: "573169454725",
+  instagram: "https://www.instagram.com/exc.store_?dlrf=MXhuNmtpcndtN2hrMw==",
+  facebook: "https://www.facebook.com/share/1Dk29BFRAQ/?mibextid=wwXIfr",
   currency: "COP"
 };
 
@@ -36,6 +36,9 @@ const PRODUCTS = [
   { id: "sn-05", name: "Creative Recreation Negro Dorado", category: "sneakers", price: 179900, sizes: TALLAS_CALZADO, image: "tenis-05.jpg", new: true },
   { id: "sn-06", name: "On Cloud Negro", category: "sneakers", price: 149900, sizes: rango("34", "43"), image: "tenis-06.jpg", new: true },
   { id: "sn-07", name: "Guess Blanco Negro", category: "sneakers", price: 179900, sizes: TALLAS_CALZADO, image: "tenis-07.jpg", new: true },
+  { id: "sn-08", name: "Nike Jordan Azul Negro Brillos", category: "sneakers", price: 149900, sizes: rango("34", "40"), image: "tenis-08.jpg", new: true },
+  { id: "sn-09", name: "Nike Air Force Alta Blanco", category: "sneakers", price: 149900, sizes: rango("34", "43"), image: "tenis-09.jpg", new: true },
+  { id: "sn-10", name: "Calvin Klein Plataforma Negro Blanco", category: "sneakers", price: 149900, sizes: rango("34", "43"), image: "tenis-10.jpg", new: true },
   { id: "ni-01", name: "Plata Espejo Kids", category: "ninos", price: 95000, sizes: rango("21", "33"), image: "nino-01.jpg", new: true },
   { id: "ni-02", name: "Black Wings Kids", category: "ninos", price: 95000, sizes: rango("21", "33"), image: "nino-02.jpg", new: true },
   { id: "ni-03", name: "Charol Rojo Kids", category: "ninos", price: 95000, sizes: rango("21", "33"), image: "nino-03.jpg", new: true },

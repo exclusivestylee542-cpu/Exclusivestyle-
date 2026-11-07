@@ -28,6 +28,8 @@
     return base + '?text=' + encodeURIComponent(text);
   }
   $('contactWa').href = waReady ? waUrl('Hola EXC., quiero más información sobre la colección.') : '#';
+  var wf = $('waFloat');
+  if (wf) wf.href = waReady ? waUrl('Hola EXC., vi su página web y quiero más información sobre sus productos.') : '#';
   // Las redes solo aparecen cuando se configuran sus URLs reales en products.js.
   [['instagramLink', STORE.instagram], ['facebookLink', STORE.facebook]].forEach(function (item) {
     var link = $(item[0]);
