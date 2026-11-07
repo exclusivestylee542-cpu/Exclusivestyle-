@@ -31,7 +31,7 @@
   var wf = $('waFloat');
   if (wf) wf.href = waReady ? waUrl('Hola EXC., vi su página web y quiero más información sobre sus productos.') : '#';
   // Las redes solo aparecen cuando se configuran sus URLs reales en products.js.
-  [['instagramLink', STORE.instagram], ['facebookLink', STORE.facebook], ['igFloat', STORE.instagram], ['fbFloat', STORE.facebook]].forEach(function (item) {
+  [['instagramLink', STORE.instagram], ['facebookLink', STORE.facebook], ['igTop', STORE.instagram], ['fbTop', STORE.facebook]].forEach(function (item) {
     var link = $(item[0]);
     if (link && item[1]) { link.href = item[1]; link.hidden = false; }
   });

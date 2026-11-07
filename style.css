@@ -463,3 +463,10 @@ footer small{display:block;margin-top:40px;color:#777;font-size:9px;letter-spaci
 .fab-wa:hover .fab-label,.fab-wa:focus-visible .fab-label{opacity:1;transform:none}
 @keyframes waPulse{0%{transform:scale(1);opacity:.75}100%{transform:scale(1.55);opacity:0}}
 @media (prefers-reduced-motion:reduce){.fab-wa::before{animation:none}}
+
+/* ===== Redes sociales: botones cuadrados al inicio ===== */
+.social-strip{display:flex;justify-content:center;gap:10px;padding:12px 16px;background:#050505;border-bottom:1px solid var(--line)}
+.sq-btn{display:inline-flex;align-items:center;gap:9px;padding:10px 20px;border:1px solid #ffffff3a;border-radius:0;color:var(--silver);text-decoration:none;font:500 11px var(--sans);letter-spacing:2.5px;text-transform:uppercase;transition:background .2s,color .2s,border-color .2s}
+.sq-btn[hidden]{display:none}
+.sq-btn:hover{background:#f7f6f3;color:#0a0a0b;border-color:#f7f6f3}
+@media (max-width:480px){.social-strip{gap:8px;padding:10px 12px}.sq-btn{flex:1;justify-content:center;padding:10px 8px;letter-spacing:1.8px}}
