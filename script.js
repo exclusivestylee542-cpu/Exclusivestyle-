@@ -57,7 +57,7 @@
 
   /* ---------- catálogo ---------- */
   var picked = {};          // talla elegida por producto
-  var filter = 'todo';
+  var filter = 'sneakers';   // al entrar se ven primero los tenis; lo demás aparece al elegir su categoría
 
   function visual(p, cls) {
     return p.image

@@ -470,3 +470,5 @@ footer small{display:block;margin-top:40px;color:#777;font-size:9px;letter-spaci
 .sq-btn[hidden]{display:none}
 .sq-btn:hover{background:#f7f6f3;color:#0a0a0b;border-color:#f7f6f3}
 @media (max-width:480px){.social-strip{gap:8px;padding:10px 12px}.sq-btn{flex:1;justify-content:center;padding:10px 8px;letter-spacing:1.8px}}
+
+.social-strip{border-top:1px solid var(--line);margin:0}
