@@ -68,18 +68,13 @@
   function renderProducts() {
     var list = PRODUCTS.filter(function (p) { return filter === 'todo' || (filter === 'nuevo' ? p.new : p.category === filter); });
     $('productGrid').innerHTML = list.map(function (p) {
-      var sizes = p.sizes.map(function (s) {
-        var on = picked[p.id] === s;
-        return '<button type="button" class="size" data-size="' + esc(s) + '" aria-pressed="' + on + '">' + esc(s) + '</button>';
-      }).join('');
       return '<article class="product" data-id="' + p.id + '">' +
         (p.new ? '<span class="new-tag">New</span>' : '') +
-        '<div class="product-img">' + visual(p) + '</div>' +
+        '<div class="product-img is-open" role="button" tabindex="0" aria-label="Ver ' + esc(p.name) + '">' + visual(p) + '</div>' +
         '<div class="product-info">' +
           '<span class="product-cat">' + CATS[p.category] + '</span>' +
-          '<h3 class="product-name">' + esc(p.name) + '</h3>' +
+          '<h3 class="product-name is-open">' + esc(p.name) + '</h3>' +
           '<span class="product-price">' + money(p.price) + '</span>' +
-          '<div class="sizes" role="group" aria-label="Talla">' + sizes + '</div>' +
           '<button type="button" class="add-btn">Agregar al carrito</button>' +
         '</div></article>';
     }).join('');
@@ -99,31 +94,91 @@
     a.addEventListener('click', function () { setFilter(a.dataset.filterLink); });
   });
 
-  $('productGrid').addEventListener('click', function (e) {
+  function cardProduct(e) {
     var card = e.target.closest('.product');
-    if (!card) return;
-    var p = product(card.dataset.id);
-    var sizeBtn = e.target.closest('.size');
-    if (sizeBtn) {
-      picked[p.id] = sizeBtn.dataset.size;
-      card.querySelector('.sizes').classList.remove('needs');
-      card.querySelectorAll('.size').forEach(function (b) {
-        b.setAttribute('aria-pressed', b === sizeBtn);
-      });
+    return card ? product(card.dataset.id) : null;
+  }
+  $('productGrid').addEventListener('click', function (e) {
+    var p = cardProduct(e);
+    if (!p) return;
+    if (e.target.closest('.add-btn')) {
+      // un solo tamaño (ej. relojes): se agrega directo; si hay tallas, se abre la ventana para elegir
+      if (p.sizes.length === 1) { addToCart(p.id, p.sizes[0]); toast('Agregado al carrito'); }
+      else openProduct(p.id);
       return;
     }
-    if (e.target.closest('.add-btn')) {
-      var size = picked[p.id] || (p.sizes.length === 1 ? p.sizes[0] : null);
-      if (!size) {
-        var box = card.querySelector('.sizes');
-        box.classList.remove('needs'); void box.offsetWidth; box.classList.add('needs');
-        toast('Elige una talla para ' + p.name);
-        return;
-      }
-      addToCart(p.id, size);
-      toast('Agregado al carrito');
-    }
+    if (e.target.closest('.is-open')) openProduct(p.id);
   });
+  $('productGrid').addEventListener('keydown', function (e) {
+    if (e.key !== 'Enter' && e.key !== ' ') return;
+    if (!e.target.classList.contains('product-img')) return;
+    e.preventDefault();
+    var p = cardProduct(e);
+    if (p) openProduct(p.id);
+  });
+
+  /* ---------- ventana del producto ---------- */
+  var curId = null, modalFocus = null;
+  function renderModalSizes(p) {
+    $('pmSizes').innerHTML = p.sizes.map(function (sz) {
+      return '<button type="button" class="size" data-size="' + esc(sz) + '" aria-pressed="' + (picked[p.id] === sz) + '">' + esc(sz) + '</button>';
+    }).join('');
+  }
+  function openProduct(id) {
+    var p = product(id);
+    if (!p) return;
+    curId = id;
+    modalFocus = document.activeElement;
+    if (p.sizes.length === 1) picked[id] = p.sizes[0];
+    $('pmImg').innerHTML = visual(p);
+    $('pmCat').textContent = CATS[p.category];
+    $('pmName').textContent = p.name;
+    $('pmPrice').textContent = money(p.price);
+    renderModalSizes(p);
+    $('pModal').hidden = false;
+    document.body.style.overflow = 'hidden';
+    $('pmClose').focus();
+  }
+  function closeProduct() {
+    $('pModal').hidden = true;
+    curId = null;
+    if (!$('cart').classList.contains('open')) document.body.style.overflow = '';
+    if (modalFocus && modalFocus.focus) modalFocus.focus();
+  }
+  function modalSize() {
+    var p = product(curId);
+    var size = picked[curId];
+    if (!size) {
+      var box = $('pmSizes');
+      box.classList.remove('needs'); void box.offsetWidth; box.classList.add('needs');
+      toast('Elige una talla para ' + p.name);
+    }
+    return size;
+  }
+  $('pmSizes').addEventListener('click', function (e) {
+    var b = e.target.closest('.size');
+    if (!b || !curId) return;
+    picked[curId] = b.dataset.size;
+    $('pmSizes').classList.remove('needs');
+    $('pmSizes').querySelectorAll('.size').forEach(function (x) { x.setAttribute('aria-pressed', x === b); });
+  });
+  $('pmAdd').addEventListener('click', function () {
+    var size = modalSize();
+    if (!size) return;
+    addToCart(curId, size);
+    closeProduct();
+    toast('Agregado al carrito');
+  });
+  $('pmWa').addEventListener('click', function () {
+    var size = modalSize();
+    if (!size) return;
+    var p = product(curId);
+    if (!waReady) { toast('Configura tu WhatsApp real en products.js antes de recibir pedidos.'); return; }
+    var msg = 'Hola EXC., quiero pedir este producto:\n\n' + p.name + '\nTalla: ' + size + '\nPrecio: ' + money(p.price) + '\n\n¿Está disponible?';
+    window.open(waUrl(msg), '_blank', 'noopener');
+  });
+  $('pmClose').addEventListener('click', closeProduct);
+  $('pModal').addEventListener('click', function (e) { if (e.target.dataset.close) closeProduct(); });
 
   function addToCart(id, size) {
     var line = cart.filter(function (i) { return i.id === id && i.size === size; })[0];
@@ -193,7 +248,8 @@
   $('closeCart').addEventListener('click', closeCart);
   $('overlay').addEventListener('click', closeCart);
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && $('cart').classList.contains('open')) closeCart();
+    if (e.key === 'Escape' && !$('pModal').hidden) closeProduct();
+    else if (e.key === 'Escape' && $('cart').classList.contains('open')) closeCart();
   });
 
   /* ---------- pedido por WhatsApp ---------- */

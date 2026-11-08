@@ -237,6 +237,24 @@
   </a>
 </div>
 
+<!-- VENTANA DEL PRODUCTO -->
+<div class="pmodal" id="pModal" hidden>
+  <div class="pmodal-backdrop" data-close="1"></div>
+  <div class="pmodal-panel" role="dialog" aria-modal="true" aria-labelledby="pmName">
+    <button type="button" class="pmodal-close" id="pmClose" aria-label="Cerrar">✕</button>
+    <div class="pmodal-img" id="pmImg"></div>
+    <div class="pmodal-body">
+      <span class="product-cat" id="pmCat"></span>
+      <h3 class="pmodal-name" id="pmName"></h3>
+      <span class="product-price" id="pmPrice"></span>
+      <div class="pmodal-label">Talla</div>
+      <div class="sizes" id="pmSizes" role="group" aria-label="Talla"></div>
+      <button type="button" class="add-btn pm-add" id="pmAdd">Agregar al carrito</button>
+      <button type="button" class="pm-wa" id="pmWa">Pedir por WhatsApp</button>
+    </div>
+  </div>
+</div>
+
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script src="products.js"></script>

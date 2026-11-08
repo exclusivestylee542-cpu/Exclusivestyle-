@@ -472,3 +472,34 @@ footer small{display:block;margin-top:40px;color:#777;font-size:9px;letter-spaci
 @media (max-width:480px){.social-strip{gap:8px;padding:10px 12px}.sq-btn{flex:1;justify-content:center;padding:10px 8px;letter-spacing:1.8px}}
 
 .social-strip{border-top:1px solid var(--line);margin:0}
+
+/* ===== Tarjeta sin tallas + ventana del producto ===== */
+.product-img.is-open,.product-name.is-open{cursor:pointer}
+.product-img.is-open:hover img{transform:scale(1.04)}
+.product-img img{transition:transform .35s}
+.product-info .add-btn{margin-top:auto}
+.pmodal{position:fixed;inset:0;z-index:70;display:flex;align-items:center;justify-content:center;padding:16px}
+.pmodal[hidden]{display:none}
+.pmodal-backdrop{position:absolute;inset:0;background:#000c;backdrop-filter:blur(3px)}
+.pmodal-panel{position:relative;width:100%;max-width:860px;max-height:calc(100dvh - 32px);overflow-y:auto;display:grid;grid-template-columns:1.1fr 1fr;background:linear-gradient(150deg,#1b1b1c,#080808);border:1px solid #ffffff2a;box-shadow:0 30px 80px -20px #000}
+.pmodal-close{position:absolute;top:10px;right:10px;z-index:2;width:38px;height:38px;border-radius:0;border:1px solid #ffffff40;background:#000a;color:#fff;font-size:16px;cursor:pointer}
+.pmodal-close:hover{background:#f7f6f3;color:#0a0a0a}
+.pmodal-img{background:radial-gradient(circle at 50% 35%,#2a2a2e,#0f0f10 75%);display:grid;place-items:center;min-height:300px}
+.pmodal-img img{width:100%;height:100%;max-height:calc(100dvh - 34px);object-fit:contain;display:block}
+.pmodal-body{padding:30px 26px;display:flex;flex-direction:column;gap:12px;justify-content:center}
+.pmodal-name{margin:0;font:400 24px/1.25 var(--serif);color:#fff}
+.pmodal-label{margin-top:10px;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted)}
+.pmodal-body .sizes{margin:0 0 8px}
+.pmodal-body .size{min-width:40px;height:38px;font-size:12px}
+.pmodal-body .pm-add{margin-top:6px;padding:15px;font-size:11px;background:#f7f6f3;color:#0a0a0a;border-color:#f7f6f3}
+.pmodal-body .pm-add:hover{background:transparent;color:#fff}
+.pm-wa{display:flex;align-items:center;justify-content:center;gap:8px;padding:15px;border:1px solid #25d366;background:#25d366;color:#fff;font:600 11px var(--sans);letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:filter .2s}
+.pm-wa:hover{filter:brightness(1.1)}
+@media (max-width:640px){
+  .pmodal{align-items:flex-end;padding:0}
+  .pmodal-panel{grid-template-columns:1fr;max-height:94dvh;border-bottom:0}
+  .pmodal-img{min-height:0;aspect-ratio:1/1;max-height:46dvh}
+  .pmodal-img img{max-height:46dvh}
+  .pmodal-body{padding:20px 18px 26px}
+  .pmodal-name{font-size:20px}
+}
