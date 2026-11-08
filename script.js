@@ -11,7 +11,7 @@
       return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
     });
   };
-  var CATS = { sneakers: 'Tenis', ninos: 'Zapatos de niño', ropa: 'Ropa', relojes: 'Relojes', accesorios: 'Accesorios' };
+  var CATS = { sneakers: 'Tenis', tenisdama: 'Tenis dama', ninos: 'Zapatos de niño', ropa: 'Ropa', relojes: 'Relojes', accesorios: 'Accesorios' };
   var toastTimer;
   function toast(msg) {
     var t = $('toast');
